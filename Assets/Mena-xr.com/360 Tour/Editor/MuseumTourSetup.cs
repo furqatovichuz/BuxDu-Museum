@@ -243,12 +243,15 @@ public static class MuseumTourSetup
         scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
         scaler.referenceResolution = new Vector2(1280, 720);
 
-        GameObject dimGO = CreateUIObject("Dim", canvasGO.transform);
+        GameObject popupRootGO = CreateUIObject("PopupRoot", canvasGO.transform);
+        StretchFull(popupRootGO.GetComponent<RectTransform>());
+
+        GameObject dimGO = CreateUIObject("Dim", popupRootGO.transform);
         Image dim = dimGO.AddComponent<Image>();
         dim.color = new Color(0f, 0f, 0f, 0.6f);
         StretchFull(dimGO.GetComponent<RectTransform>());
 
-        GameObject panelGO = CreateUIObject("PopupPanel", canvasGO.transform);
+        GameObject panelGO = CreateUIObject("PopupPanel", popupRootGO.transform);
         Image panelImage = panelGO.AddComponent<Image>();
         panelImage.color = new Color(0.1f, 0.1f, 0.1f, 0.95f);
         RectTransform panelRT = panelGO.GetComponent<RectTransform>();
@@ -318,7 +321,7 @@ public static class MuseumTourSetup
         StretchFull(closeLabelGO.GetComponent<RectTransform>());
 
         InfoPopupManager manager = canvasGO.AddComponent<InfoPopupManager>();
-        manager.panelRoot = panelGO;
+        manager.panelRoot = popupRootGO;
         manager.titleText = titleText;
         manager.descriptionText = descText;
         manager.imageRoot = imageGO;
@@ -330,7 +333,7 @@ public static class MuseumTourSetup
 
         UnityEventTools.AddPersistentListener(closeButton.onClick, manager.Hide);
 
-        panelGO.SetActive(false);
+        popupRootGO.SetActive(false);
 
         Selection.activeGameObject = canvasGO;
         EditorUtility.SetDirty(canvasGO);

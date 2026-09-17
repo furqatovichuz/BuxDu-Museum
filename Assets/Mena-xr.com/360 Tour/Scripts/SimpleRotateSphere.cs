@@ -16,7 +16,11 @@ public class SimpleRotateSphere : MonoBehaviour
 
     void Awake ()
     {
-        _cachedTransform = Camera.main.transform;
+        // Use this object's own transform rather than Camera.main: this script
+        // already sits on the camera, and Camera.main is ambiguous (and can pick
+        // the wrong camera) whenever more than one scene/camera tagged
+        // MainCamera is loaded at once.
+        _cachedTransform = transform;
     }
 	
 	void Update () {
