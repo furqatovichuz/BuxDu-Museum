@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class SimpleRotateSphere : MonoBehaviour
@@ -21,9 +21,15 @@ public class SimpleRotateSphere : MonoBehaviour
         // the wrong camera) whenever more than one scene/camera tagged
         // MainCamera is loaded at once.
         _cachedTransform = transform;
+
+        // Start from the camera's current facing instead of (0,0) so the first
+        // drag doesn't snap the view to a different orientation.
+        Vector3 e = _cachedTransform.eulerAngles;
+        _x = e.x;
+        _y = e.y;
     }
-	
-	void Update () {
+
+    void Update () {
         TrackRotation();
     }
 
