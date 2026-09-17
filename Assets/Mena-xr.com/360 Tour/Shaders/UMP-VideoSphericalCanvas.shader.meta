@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 58a1286e9afdb5f448cb6a0b7ffa0505
+timeCreated: 1463326626
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135812
+  packageName: 360 Tour Template
+  packageVersion: 1.0
+  assetPath: Assets/Mena-xr.com/360 Tour/Shaders/UMP-VideoSphericalCanvas.shader
+  uploadId: 288992

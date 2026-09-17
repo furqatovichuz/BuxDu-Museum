@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c0114444f3bc7654e9e010973e6eb684
+timeCreated: 1545224085
+licenseType: Store
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 135812
+  packageName: 360 Tour Template
+  packageVersion: 1.0
+  assetPath: Assets/Mena-xr.com/360 Tour/Scenes/Demo.unity
+  uploadId: 288992
